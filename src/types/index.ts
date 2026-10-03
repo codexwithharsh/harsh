@@ -48,13 +48,13 @@ export interface GalleryImage {
 export interface SocialGalleryItem {
   id: string;
   title: string;
-  category: 'Fashion' | 'Food' | 'Lifestyle' | 'Marketing' | 'Product' | 'Campaign' | 'Editorial';
+  category: 'Fashion' | 'Food' | 'Lifestyle' | 'Marketing' | 'Product' | 'Campaign' | 'Editorial' | 'Accessories' | 'E-Commerce' | 'Beauty';
   tools: string[];
   description: string;
   aspectRatio: string;
   palette: string[];
   tag: string;
-  renderType: 'coffee-cup' | 'burger-promo' | 'burger-special' | 'fashion-elara' | 'wellness-care' | 'tech-crypto' | 'juice-clean' | 'fashion-sale';
+  renderType: 'coffee-cup' | 'burger-promo' | 'burger-special' | 'fashion-elara' | 'wellness-care' | 'tech-crypto' | 'juice-clean' | 'fashion-sale' | 'bags-collection' | 'beauty-campaign';
   imageUrl?: string;
   pinUrl?: string;
   galleryImages?: GalleryImage[];

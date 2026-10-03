@@ -1,6 +1,57 @@
 import React, { useState } from 'react';
 import { Sparkles, Palette, Type, Layout, ZoomIn, X, ExternalLink } from 'lucide-react';
 
+const ELARA_TEXTILES = [
+  {
+    url: 'https://i.pinimg.com/originals/8a/53/5b/8a535b2007b4ecd7b6dc73482837f141.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/51439620740368504/',
+    title: 'Red Vishnupuri Silk Saree Monochrome Print',
+    tag: 'Silk Saree Collection',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/6b/b7/ee/6bb7ee34e8941031cc876d8e8e8cf0cc.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/911064199637442572/',
+    title: 'Mustard Yellow Vishnupuri Silk Chevron Saree',
+    tag: 'Workwear Elegance',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/e6/d9/e4/e6d9e4df8cbe877f4609220f25dbe541.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/255438610111380872/',
+    title: 'Monochromatic QR Code Graphic Apparel',
+    tag: 'Graphic Apparel',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/25/1c/1f/251c1ff800584eae1b5c19dc2d64fba2.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/1055599908945150/',
+    title: 'Boho Mughal Indian Floral Textile Pattern',
+    tag: 'Textile Pattern',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/7c/a4/15/7ca41543681046277627888f62b7ac19.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/996280748838309634/',
+    title: 'Intricate Fabric Pattern & Artisanal Motif',
+    tag: 'Artisanal Fabric',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/0b/40/70/0b40700c821f47045e75296218268b2c.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/2814818512963904/',
+    title: 'Abstract Geometric Textile Color Study',
+    tag: 'Pattern Motif',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/f1/f7/38/f1f73896755ddab6c94a27c2c1ed0d18.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/1143773636622539205/',
+    title: 'Traditional Silk Saree Digital Prints & Pallu',
+    tag: 'Traditional Silk',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/1d/34/07/1d340728473b012a8d3ac111dfa4ed14.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/68750127169/',
+    title: 'Fabric Pattern Architecture & Paisley Guide',
+    tag: 'Pattern Guide',
+  },
+];
+
 export const BrandingDeepDive: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const elaraImageUrl = 'https://cdn.dribbble.com/userupload/48233405/file/98b51390c351ecae5f13407030b7e99c.png?resize=752x&vertical=center';
@@ -190,6 +241,53 @@ export const BrandingDeepDive: React.FC = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Textile, Silk Saree & Pattern System Showcase */}
+          <div className="pt-8 border-t border-white/10 space-y-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono text-[#E9C99E] uppercase tracking-widest block mb-1">
+                  Textile &amp; Apparel Architecture
+                </span>
+                <h4 className="text-xl md:text-2xl font-display font-bold text-white uppercase tracking-tight">
+                  SILK SAREE, TEXTILE PRINTS &amp; APPAREL GRAPHICS
+                </h4>
+              </div>
+              <p className="text-xs font-mono text-[#B8B8B8] max-w-md">
+                Bespoke textile motifs, traditional Vishnupuri silk saree digital prints, monochrome QR streetwear, and Mughal-inspired patterns crafted for the Elara house.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {ELARA_TEXTILES.map((t, idx) => (
+                <a
+                  key={idx}
+                  href={t.pinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative rounded-xl overflow-hidden border border-white/10 bg-[#0E0E10] hover:border-[#E9C99E]/50 transition-all block"
+                >
+                  <div className="aspect-[4/5] overflow-hidden bg-black relative">
+                    <img
+                      src={t.url}
+                      alt={t.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+                      <span className="text-[10px] font-mono text-[#E9C99E]">{t.tag}</span>
+                      <span className="text-xs font-semibold text-white truncate">{t.title}</span>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-[#080608] border-t border-white/5 flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-white/70 truncate">{t.tag}</span>
+                    <span className="text-[10px] font-mono text-[#E60023] group-hover:text-red-400">Pin ↗</span>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>

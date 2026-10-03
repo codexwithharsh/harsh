@@ -1,7 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CaseStudyData } from '../types';
 import { ArtworkVisual } from './ArtworkVisual';
-import { X, ArrowRight, CheckCircle2, Layers, Palette, Type, Compass } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, Layers, Palette, Type, Compass, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const ELARA_FASHION_LOOKBOOK = [
+  {
+    url: 'https://i.pinimg.com/originals/c8/09/0b/c8090b81f03759e3ba9438f2a805e6de.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/53972895530989157/',
+    title: 'Autumn Grace Luxury Editorial Campaign',
+    tag: 'Editorial Campaign',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/8a/53/5b/8a535b2007b4ecd7b6dc73482837f141.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/51439620740368504/',
+    title: 'Red Vishnupuri Silk Saree with Abstract Monochrome Prints',
+    tag: 'Silk Saree Collection',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/6b/b7/ee/6bb7ee34e8941031cc876d8e8e8cf0cc.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/911064199637442572/',
+    title: 'Mustard Yellow Vishnupuri Silk Saree with Black Chevron Prints',
+    tag: 'Workwear Elegance',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/e6/d9/e4/e6d9e4df8cbe877f4609220f25dbe541.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/255438610111380872/',
+    title: 'Clothes with QR Code — Monochromatic Streetwear & Apparel',
+    tag: 'Graphic Apparel',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/25/1c/1f/251c1ff800584eae1b5c19dc2d64fba2.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/1055599908945150/',
+    title: 'Colorful Boho Mughal Indian Pattern & Textile Artwork',
+    tag: 'Textile Pattern',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/7c/a4/15/7ca41543681046277627888f62b7ac19.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/996280748838309634/',
+    title: 'Intricate Fabric Pattern & Artisanal Textile Design',
+    tag: 'Artisanal Fabric',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/0b/40/70/0b40700c821f47045e75296218268b2c.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/2814818512963904/',
+    title: 'Abstract Geometric Textile Motif & Color Study',
+    tag: 'Pattern Motif',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/f1/f7/38/f1f73896755ddab6c94a27c2c1ed0d18.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/1143773636622539205/',
+    title: 'Traditional Silk Saree Digital Prints & Luxury Pallu',
+    tag: 'Traditional Silk',
+  },
+  {
+    url: 'https://i.pinimg.com/originals/1d/34/07/1d340728473b012a8d3ac111dfa4ed14.jpg',
+    pinUrl: 'https://in.pinterest.com/pin/68750127169/',
+    title: 'Fabric Pattern Architecture & Paisley Textile Guide',
+    tag: 'Pattern Guide',
+  },
+];
 
 interface CaseStudyModalProps {
   project: CaseStudyData | null;
@@ -9,6 +66,7 @@ interface CaseStudyModalProps {
 }
 
 export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose }) => {
+  const [activeElaraIndex, setActiveElaraIndex] = useState(0);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -80,25 +138,108 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 />
               </div>
 
-              {/* Editorial Campaign Pin Artwork */}
-              <div className="w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-[#0E0E10] group relative">
-                <a
-                  href="https://in.pinterest.com/pin/53972895530989157/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="View Pin on Pinterest"
-                  className="block"
-                >
-                  <img
-                    src="https://i.pinimg.com/originals/c8/09/0b/c8090b81f03759e3ba9438f2a805e6de.jpg"
-                    alt="Elara Luxury Fashion Editorial Campaign by Harsh Gaurav"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-auto object-contain block group-hover:scale-[1.01] transition-transform duration-500"
-                  />
-                  <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 px-3 py-1.5 bg-[#E60023] hover:bg-[#b8001b] rounded-md text-xs font-mono text-white transition-colors">
-                    <span>View Pin on Pinterest ↗</span>
+              {/* Editorial Campaign & Textile Lookbook Carousel */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#E9C99E]" />
+                    <span className="text-white font-medium">Textile, Silk Saree &amp; Fashion Lookbook</span>
+                    <span className="text-white/40">·</span>
+                    <span className="text-[#E9C99E]">{ELARA_FASHION_LOOKBOOK[activeElaraIndex].tag}</span>
                   </div>
-                </a>
+                  <span className="text-white/60">
+                    {activeElaraIndex + 1} / {ELARA_FASHION_LOOKBOOK.length}
+                  </span>
+                </div>
+
+                <div className="w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-[#0E0E10] group relative">
+                  <div className="relative w-full aspect-[4/5] md:aspect-[16/10] max-h-[580px] bg-black flex items-center justify-center overflow-hidden">
+                    {/* Blurred Backdrop */}
+                    <img
+                      src={ELARA_FASHION_LOOKBOOK[activeElaraIndex].url}
+                      alt=""
+                      aria-hidden="true"
+                      referrerPolicy="no-referrer"
+                      className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-35 scale-110 pointer-events-none"
+                    />
+                    {/* Main Image */}
+                    <img
+                      key={ELARA_FASHION_LOOKBOOK[activeElaraIndex].url}
+                      src={ELARA_FASHION_LOOKBOOK[activeElaraIndex].url}
+                      alt={ELARA_FASHION_LOOKBOOK[activeElaraIndex].title}
+                      referrerPolicy="no-referrer"
+                      className="relative z-10 w-full h-full object-contain"
+                    />
+
+                    {/* Top Title Overlay */}
+                    <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+                      <span className="px-3 py-1 bg-black/75 backdrop-blur-md rounded border border-white/10 text-xs font-mono text-[#E9C99E] max-w-[70%] truncate">
+                        {ELARA_FASHION_LOOKBOOK[activeElaraIndex].title}
+                      </span>
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveElaraIndex((prev) =>
+                          prev === 0 ? ELARA_FASHION_LOOKBOOK.length - 1 : prev - 1
+                        );
+                      }}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-black/75 hover:bg-black text-white/80 hover:text-white border border-white/20 transition-all backdrop-blur-md shadow-xl"
+                      aria-label="Previous fashion artwork"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveElaraIndex((prev) =>
+                          prev === ELARA_FASHION_LOOKBOOK.length - 1 ? 0 : prev + 1
+                        );
+                      }}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-black/75 hover:bg-black text-white/80 hover:text-white border border-white/20 transition-all backdrop-blur-md shadow-xl"
+                      aria-label="Next fashion artwork"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Pinterest Button */}
+                    <a
+                      href={ELARA_FASHION_LOOKBOOK[activeElaraIndex].pinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Pin on Pinterest"
+                      onClick={(e) => e.stopPropagation()}
+                      className="absolute bottom-4 right-4 z-20 flex items-center gap-2 px-3.5 py-1.5 bg-[#E60023] hover:bg-[#b8001b] rounded-md text-xs font-mono text-white transition-colors shadow-lg"
+                    >
+                      <span>View Pin on Pinterest ↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Thumbnail Strip */}
+                <div className="grid grid-cols-5 sm:grid-cols-9 gap-2 pt-1">
+                  {ELARA_FASHION_LOOKBOOK.map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveElaraIndex(idx)}
+                      className={`relative aspect-square rounded-lg overflow-hidden border transition-all ${
+                        activeElaraIndex === idx
+                          ? 'border-[#E9C99E] ring-2 ring-[#E9C99E]/50 scale-105'
+                          : 'border-white/10 hover:border-white/40 opacity-60 hover:opacity-100'
+                      }`}
+                      aria-label={`Select ${item.title}`}
+                    >
+                      <img
+                        src={item.url}
+                        alt=""
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           ) : project.mockupType === 'coffee' ? (
