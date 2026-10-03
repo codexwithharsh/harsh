@@ -69,20 +69,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
             ))}
           </nav>
 
-          {/* Zone 3: 1-2 primary actions */}
+          {/* Zone 3: primary action */}
           <div className="flex items-center gap-3">
-            <a
-              href="https://dribbble.com/shots/27517440-Graphic-UI-UX-Design-Portfolio-2026"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-[#E9C99E] hover:text-white border border-[#E9C99E]/30 hover:border-[#E9C99E] rounded-md transition-colors whitespace-nowrap"
-            >
-              <span>Dribbble Shot ↗</span>
-            </a>
-
             <button
               onClick={onContactClick}
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold tracking-wider text-black bg-white hover:bg-[#E9C99E] rounded-md transition-all duration-200 whitespace-nowrap shadow-sm"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold tracking-wider text-black bg-white hover:bg-[#E9C99E] rounded-md transition-all duration-200 whitespace-nowrap shadow-sm cursor-pointer"
             >
               LET'S TALK
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -124,21 +115,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
           </div>
 
           <div className="pt-8 border-t border-white/10 space-y-4">
-            <a
-              href="https://dribbble.com/shots/27517440-Graphic-UI-UX-Design-Portfolio-2026"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-3 text-center text-xs font-mono font-bold tracking-wider text-[#EA4C89] border border-[#EA4C89]/40 hover:bg-[#EA4C89]/10 rounded-md block transition-colors"
-            >
-              VIEW ON DRIBBLE (2026 SHOT) ↗
-            </a>
-
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onContactClick();
               }}
-              className="w-full py-3.5 text-center text-sm font-semibold tracking-wider text-black bg-white rounded-md"
+              className="w-full py-3.5 text-center text-sm font-semibold tracking-wider text-black bg-white rounded-md cursor-pointer"
             >
               START A PROJECT
             </button>
