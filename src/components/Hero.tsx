@@ -66,52 +66,94 @@ export const Hero: React.FC<HeroProps> = ({ onViewWork, onContact }) => {
         </div>
       </div>
 
-      {/* Center Stage Dramatic Typography */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full my-auto py-12 md:py-16">
-        <div className="space-y-6">
-          {/* Subtitle Roles */}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs md:text-sm tracking-[0.2em] uppercase text-[#E9C99E] font-mono font-medium">
-            <span>Graphic Designer</span>
-            <span className="text-white/30">/</span>
-            <span>Visual Designer</span>
-            <span className="text-white/30">/</span>
-            <span>AI Creative</span>
-            <span className="text-white/30">/</span>
-            <span>Creative Technologist</span>
+      {/* Center Stage Dramatic Typography & Featured Visual Showcase */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full my-auto py-8 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Typography & Narrative */}
+          <div className="lg:col-span-7 space-y-6">
+            {/* Subtitle Roles */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs md:text-sm tracking-[0.2em] uppercase text-[#E9C99E] font-mono font-medium">
+              <span>Graphic Designer</span>
+              <span className="text-white/30">/</span>
+              <span>Visual Designer</span>
+              <span className="text-white/30">/</span>
+              <span>AI Creative</span>
+              <span className="text-white/30">/</span>
+              <span>Creative Technologist</span>
+            </div>
+
+            {/* Massive Display Title */}
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl font-display font-extrabold tracking-tighter text-white uppercase leading-[0.9] text-balance">
+              HARSH <br className="hidden sm:inline" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
+                GAURAV
+              </span>
+            </h1>
+
+            {/* Intro Narrative */}
+            <div className="pt-2 max-w-xl">
+              <p className="text-base md:text-lg text-[#B8B8B8] font-serif-editorial italic leading-relaxed">
+                “Designing bold visual experiences where creativity, technology and storytelling meet.”
+              </p>
+            </div>
+
+            {/* Primary Action Buttons */}
+            <div className="pt-4 flex flex-wrap items-center gap-4">
+              <button
+                onClick={onViewWork}
+                className="px-6 py-3.5 text-xs font-bold tracking-widest uppercase bg-white text-black hover:bg-[#E9C99E] transition-all duration-200 rounded-md flex items-center gap-2 group shadow-lg cursor-pointer"
+              >
+                <span>VIEW MY WORK</span>
+                <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+              </button>
+
+              <button
+                onClick={onContact}
+                className="px-6 py-3.5 text-xs font-semibold tracking-widest uppercase bg-transparent text-white hover:text-white border border-white/20 hover:border-white/50 transition-all duration-200 rounded-md flex items-center gap-2 cursor-pointer"
+              >
+                <span>LET'S WORK TOGETHER</span>
+                <ArrowUpRight className="w-4 h-4 text-[#E9C99E]" />
+              </button>
+            </div>
           </div>
 
-          {/* Massive Display Title */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-extrabold tracking-tighter text-white uppercase leading-[0.9] text-balance">
-            HARSH <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-              GAURAV
-            </span>
-          </h1>
+          {/* Right Column: Hero Portfolio Visual Showcase */}
+          <div className="lg:col-span-5 relative w-full">
+            {/* Ambient Background Glow */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#E9C99E]/20 to-[#F4D3D7]/20 rounded-2xl blur-xl opacity-60 -z-10" />
 
-          {/* Intro Narrative */}
-          <div className="pt-4 max-w-2xl">
-            <p className="text-lg md:text-xl text-[#B8B8B8] font-serif-editorial italic leading-relaxed">
-              “Designing bold visual experiences where creativity, technology and storytelling meet.”
-            </p>
-          </div>
+            <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-[#0D0D10]/80 shadow-2xl backdrop-blur-md group transition-all duration-300 hover:border-[#E9C99E]/40">
+              {/* Top Bar Decoration */}
+              <div className="flex items-center justify-between px-3.5 py-2.5 border-b border-white/10 bg-black/50 text-[10px] font-mono">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                  <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
+                  <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                  <span className="ml-2 text-white/50 tracking-wider uppercase">HARSH GAURAV · PORTFOLIO</span>
+                </div>
+                <span className="text-[#E9C99E] font-medium tracking-wider">CREATIVE SHOWCASE</span>
+              </div>
 
-          {/* Primary Action Buttons */}
-          <div className="pt-6 flex flex-wrap items-center gap-4">
-            <button
-              onClick={onViewWork}
-              className="px-6 py-3.5 text-xs font-bold tracking-widest uppercase bg-white text-black hover:bg-[#E9C99E] transition-all duration-200 rounded-md flex items-center gap-2 group shadow-lg"
-            >
-              <span>VIEW MY WORK</span>
-              <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-            </button>
+              {/* Artwork Banner Image */}
+              <div className="relative aspect-[16/9] w-full bg-black/60 overflow-hidden flex items-center justify-center">
+                <img
+                  src="/images/harsh-hero-portfolio.png"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://i.ibb.co/NdCBX52H/Harsh-Gaurav-Creative-Design-Portfolio-1.png';
+                  }}
+                  alt="Harsh Gaurav Creative Design Portfolio Artwork"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
+                />
+              </div>
 
-            <button
-              onClick={onContact}
-              className="px-6 py-3.5 text-xs font-semibold tracking-widest uppercase bg-transparent text-white hover:text-white border border-white/20 hover:border-white/50 transition-all duration-200 rounded-md flex items-center gap-2"
-            >
-              <span>LET'S WORK TOGETHER</span>
-              <ArrowUpRight className="w-4 h-4 text-[#E9C99E]" />
-            </button>
+              {/* Bottom Caption Bar */}
+              <div className="px-4 py-3 bg-gradient-to-t from-black/80 to-black/40 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                <span className="text-white/80">Visual Identity &amp; Creative Direction</span>
+                <span className="text-[#E9C99E] text-[11px] font-semibold">DELHI, IN</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
