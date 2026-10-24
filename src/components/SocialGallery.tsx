@@ -652,14 +652,6 @@ export const SocialGallery: React.FC = () => {
 
                 {/* Actions */}
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <a
-                    href={BAG_POSTERS[activeBagIndex].pinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#E60023] hover:bg-[#b8001b] text-white text-xs font-mono font-medium rounded-lg transition-colors shadow-lg"
-                  >
-                    <span>View on Pinterest ↗</span>
-                  </a>
                   <button
                     onClick={() => {
                       const item = SOCIAL_GALLERY.find((i) => i.id === 'soc-13');
@@ -668,10 +660,10 @@ export const SocialGallery: React.FC = () => {
                         setActiveImageIndex(activeBagIndex);
                       }
                     }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-mono rounded-lg transition-colors border border-white/15"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black hover:bg-[#E9C99E] text-xs font-mono font-semibold rounded-lg transition-colors shadow-lg cursor-pointer"
                   >
                     <ZoomIn className="w-3.5 h-3.5" />
-                    <span>Open Lightbox</span>
+                    <span>Open Full Preview</span>
                   </button>
                 </div>
               </div>
@@ -829,14 +821,6 @@ export const SocialGallery: React.FC = () => {
 
                 {/* Actions */}
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <a
-                    href={BEAUTY_POSTERS[activeBeautyIndex].pinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#E60023] hover:bg-[#b8001b] text-white text-xs font-mono font-medium rounded-lg transition-colors shadow-lg"
-                  >
-                    <span>View on Pinterest ↗</span>
-                  </a>
                   <button
                     onClick={() => {
                       const item = SOCIAL_GALLERY.find((i) => i.id === 'soc-14');
@@ -845,10 +829,10 @@ export const SocialGallery: React.FC = () => {
                         setActiveImageIndex(activeBeautyIndex);
                       }
                     }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-mono rounded-lg transition-colors border border-white/15"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black hover:bg-[#E9C99E] text-xs font-mono font-semibold rounded-lg transition-colors shadow-lg cursor-pointer"
                   >
                     <ZoomIn className="w-3.5 h-3.5" />
-                    <span>Open Lightbox</span>
+                    <span>Open Full Preview</span>
                   </button>
                 </div>
               </div>
@@ -999,25 +983,9 @@ export const SocialGallery: React.FC = () => {
                   <span className="text-white">{selectedItem.tools.join(' · ')}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  {(selectedItem.galleryImages
-                    ? selectedItem.galleryImages[activeImageIndex]?.pinUrl || selectedItem.pinUrl
-                    : selectedItem.pinUrl) && (
-                    <a
-                      href={
-                        selectedItem.galleryImages
-                          ? selectedItem.galleryImages[activeImageIndex]?.pinUrl || selectedItem.pinUrl
-                          : selectedItem.pinUrl
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3.5 py-2 bg-[#E60023] hover:bg-[#b8001b] text-white text-xs font-semibold rounded transition-colors inline-flex items-center gap-1.5"
-                    >
-                      <span>View on Pinterest ↗</span>
-                    </a>
-                  )}
                   <button
                     onClick={() => setSelectedItem(null)}
-                    className="px-4 py-2 bg-white text-black text-xs font-semibold rounded hover:bg-[#E9C99E] transition-colors"
+                    className="px-5 py-2.5 bg-white text-black text-xs font-semibold rounded-lg hover:bg-[#E9C99E] transition-colors cursor-pointer"
                   >
                     Back to Gallery
                   </button>

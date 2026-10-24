@@ -38,7 +38,7 @@ export const Contact: React.FC<ContactProps> = ({ prefilledService, onViewWork }
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/[0.08]">
           <div>
             <span className="text-xs uppercase tracking-widest text-[#E9C99E] font-mono block mb-2">
-              12 — Initiate Collaboration
+              13 — Initiate Collaboration
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white uppercase">
               CONTACT &amp; INQUIRY

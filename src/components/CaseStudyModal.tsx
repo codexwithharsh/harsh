@@ -203,18 +203,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                     >
                       <ChevronRight className="w-5 h-5" />
                     </button>
-
-                    {/* Pinterest Button */}
-                    <a
-                      href={ELARA_FASHION_LOOKBOOK[activeElaraIndex].pinUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="View Pin on Pinterest"
-                      onClick={(e) => e.stopPropagation()}
-                      className="absolute bottom-4 right-4 z-20 flex items-center gap-2 px-3.5 py-1.5 bg-[#E60023] hover:bg-[#b8001b] rounded-md text-xs font-mono text-white transition-colors shadow-lg"
-                    >
-                      <span>View Pin on Pinterest ↗</span>
-                    </a>
                   </div>
                 </div>
 

@@ -77,14 +77,10 @@ export const BannerShowcase: React.FC = () => {
               </p>
             </div>
 
-            {/* If banner-2 (Craft Burger Co.), showcase both authentic Pinterest burger artworks */}
+            {/* If banner-2 (Craft Burger Co.), showcase both authentic burger artworks */}
             {activeBanner.id === 'banner-2' && (
               <div className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center gap-3">
-                <a
-                  href="https://in.pinterest.com/pin/17662623534209442/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Super Delicious Burger — View on Pinterest"
+                <div
                   className="w-32 md:w-40 h-44 md:h-52 rounded-xl overflow-hidden shadow-2xl border border-amber-400/30 bg-black/60 p-1.5 group/art transition-transform hover:scale-105 block"
                 >
                   <img
@@ -94,14 +90,10 @@ export const BannerShowcase: React.FC = () => {
                     className="w-full h-full object-contain drop-shadow-2xl rounded-lg"
                   />
                   <div className="text-[9px] font-mono text-center text-amber-300 pt-0.5">
-                    Design 01 ↗
+                    Design 01
                   </div>
-                </a>
-                <a
-                  href="https://in.pinterest.com/pin/1123648175799392998/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Artisan Burger Menu — View on Pinterest"
+                </div>
+                <div
                   className="w-32 md:w-40 h-44 md:h-52 rounded-xl overflow-hidden shadow-2xl border border-amber-400/30 bg-black/60 p-1.5 group/art transition-transform hover:scale-105 block"
                 >
                   <img
@@ -111,9 +103,9 @@ export const BannerShowcase: React.FC = () => {
                     className="w-full h-full object-contain drop-shadow-2xl rounded-lg"
                   />
                   <div className="text-[9px] font-mono text-center text-amber-300 pt-0.5">
-                    Design 02 ↗
+                    Design 02
                   </div>
-                </a>
+                </div>
               </div>
             )}
 

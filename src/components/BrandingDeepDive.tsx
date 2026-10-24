@@ -262,11 +262,8 @@ export const BrandingDeepDive: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {ELARA_TEXTILES.map((t, idx) => (
-                <a
+                <div
                   key={idx}
-                  href={t.pinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group relative rounded-xl overflow-hidden border border-white/10 bg-[#0E0E10] hover:border-[#E9C99E]/50 transition-all block"
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-black relative">
@@ -284,9 +281,9 @@ export const BrandingDeepDive: React.FC = () => {
                   </div>
                   <div className="p-3 bg-[#080608] border-t border-white/5 flex items-center justify-between">
                     <span className="text-[10px] font-mono text-white/70 truncate">{t.tag}</span>
-                    <span className="text-[10px] font-mono text-[#E60023] group-hover:text-red-400">Pin ↗</span>
+                    <span className="text-[10px] font-mono text-[#E9C99E]">Elara Motif</span>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
