@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { FeaturedWorks } from './components/FeaturedWorks';
 import { CaseStudyModal } from './components/CaseStudyModal';
@@ -42,7 +43,13 @@ export default function App() {
       <Navbar onContactClick={() => scrollToSection('contact')} />
 
       {/* Main Content Sections */}
-      <main className="pt-20">
+      <main>
+        {/* Dramatic Full-Screen Hero */}
+        <Hero
+          onViewWork={() => scrollToSection('work')}
+          onContact={() => scrollToSection('contact')}
+        />
+
         {/* Selected Works Grid */}
         <FeaturedWorks onSelectProject={(project) => setSelectedCaseStudy(project)} />
 
